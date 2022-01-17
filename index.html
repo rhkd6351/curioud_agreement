@@ -456,7 +456,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 토큰의 유효시간은 2h 입니다.
 </aside>
 <h2 id='get-user'>Get User</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/user"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
 
 </code></pre></div>
 <blockquote>
@@ -491,7 +491,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 페이지 로드시 호출하여 토큰이 유효한지 확인해 로그인을 관리할 수 있습니다.
 </aside>
 <h2 id='sign-up'>Sign Up</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/user"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
 
 </code></pre></div>
 <blockquote>
@@ -558,7 +558,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 관리자 계정만 회원을 등록할 수 있습니다. <br/>관리자계정: ID: curioudAdmin PW: curioudAdmin
 </aside>
 <h1 id='0be45e6f77'>작성자</h1><h2 id='get-project'>Get Project</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/{project-name}"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
 
 </code></pre></div>
 <blockquote>
@@ -673,7 +673,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </tr>
 </tbody></table>
 <h2 id='post-project'>Post Project</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
 
 </code></pre></div>
 <blockquote>
@@ -744,7 +744,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </tr>
 </tbody></table>
 <h2 id='get-project-list'>Get Project List</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
 
 </code></pre></div>
 <blockquote>
@@ -780,7 +780,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </tr>
 </tbody></table>
 <h2 id='post-objects'>Post Objects</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/{project-name}/objects"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
 
 </code></pre></div>
 <blockquote>
@@ -1100,7 +1100,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </tr>
 </tbody></table>
 <h2 id='get-submittees'>Get Submittees</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/{project-name}/submittees"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
 
 </code></pre></div>
 <blockquote>
@@ -1157,7 +1157,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </tr>
 </tbody></table>
 <h2 id='get-submittee'>Get Submittee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/submittees/{submittee-name}"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
 
 </code></pre></div>
 <blockquote>
@@ -1286,7 +1286,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </tr>
 </tbody></table>
 <h2 id='change-state'>Change State</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/{project-name}/state"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
 
 </code></pre></div>
 <blockquote>
@@ -1343,7 +1343,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </tr>
 </tbody></table>
 <h2 id='get-submittee-pdf'>Get Submittee PDF</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/submittees/{submittee-name}/pdf"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
 
 </code></pre></div>
 <blockquote>
