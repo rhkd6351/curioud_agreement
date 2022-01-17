@@ -392,7 +392,7 @@ test id: curioud1, curioud2, curioud3 <br/>
 test pw: curioud1, curioud2, curioud3 <br/></p>
 
 <!-- 22/01/14 문서생성 -->
-<h1 id='5ade861f77'>회원관리</h1><h2 id='login'>Login</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/user/login"</span> <span class="se">\</span>
+<h1 id='5ade861f77'>회원관리</h1><h2 id='login'>Login</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/user/authentication"</span> <span class="se">\</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">kittn</span><span class="dl">"</span><span class="p">);</span>
 
@@ -408,7 +408,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </span></code></pre></div>
 <p>로그인, access token을 발급합니다.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST /api/user/login</code></p>
+<p><code>POST /api/user/authentication</code></p>
 <h3 id='request-body'>Request Body</h3>
 <table><thead>
 <tr>
@@ -473,7 +473,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </span></code></pre></div>
 <p>회원 정보를 가져옵니다.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://15.164.134.52:8080/api/user/login</code></p>
+<p><code>GET http://15.164.134.52:8080/api/user</code></p>
 <h3 id='error-2'>Error</h3>
 <table><thead>
 <tr>
@@ -557,7 +557,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <aside class="notice">
 관리자 계정만 회원을 등록할 수 있습니다. <br/>관리자계정: ID: curioudAdmin PW: curioudAdmin
 </aside>
-<h1 id='0be45e6f77'>작성자</h1><h2 id='get-project'>Get Project</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/project/{project-name}"</span> <span class="se">\</span>
+<h1 id='0be45e6f77'>작성자</h1><h2 id='get-project'>Get Project</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/{project-name}"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
 
 </code></pre></div>
@@ -639,7 +639,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <p>프로젝트 정보를 가져옵니다.<br />
 프로젝트의 pdf, objects 가 포함되어있습니다.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET /api/project/{project-name}</code></p>
+<p><code>GET /api/projects/{project-name}</code></p>
 <h3 id='path-parameter'>Path Parameter</h3>
 <table><thead>
 <tr>
@@ -672,7 +672,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <td>소유하지 않은 프로젝트 입니다.</td>
 </tr>
 </tbody></table>
-<h2 id='post-project'>Post Project</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/project"</span> <span class="se">\</span>
+<h2 id='post-project'>Post Project</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
 
 </code></pre></div>
@@ -704,7 +704,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </span></code></pre></div>
 <p>새로운 프로젝트를 등록합니다.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>POST /api/project</code></p>
+<p><code>POST /api/projects</code></p>
 <h3 id='request-body-3'>Request Body</h3>
 <table><thead>
 <tr>
@@ -779,7 +779,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <td>토큰이 유효하지 않습니다.</td>
 </tr>
 </tbody></table>
-<h2 id='post-objects'>Post Objects</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/project/{project-name}/objects"</span> <span class="se">\</span>
+<h2 id='post-objects'>Post Objects</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/{project-name}/objects"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
 
 </code></pre></div>
@@ -848,7 +848,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </span></code></pre></div>
 <p>프로젝트에 오브젝트를 등록, 저장합니다.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
-<p><code>POST /api/project/{project-name}/objects</code></p>
+<p><code>POST /api/projects/{project-name}/objects</code></p>
 <h3 id='request-body-4'>Request Body</h3>
 <table><thead>
 <tr>
@@ -1099,7 +1099,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <td>수정이 불가능한 프로젝트 입니다.</td>
 </tr>
 </tbody></table>
-<h2 id='get-submittees'>Get Submittees</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/project/{project-name}/submittees"</span> <span class="se">\</span>
+<h2 id='get-submittees'>Get Submittees</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/{project-name}/submittees"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
 
 </code></pre></div>
@@ -1119,7 +1119,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </span></code></pre></div>
 <p>프로젝트의 제출자 리스트를 가져옵니다.</p>
 <h3 id='http-request-8'>HTTP Request</h3>
-<p><code>GET /api/project/{project-name}/submittees</code></p>
+<p><code>GET /api/projects/{project-name}/submittees</code></p>
 <h3 id='path-parameter-2'>Path Parameter</h3>
 <table><thead>
 <tr>
@@ -1156,7 +1156,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <td>유효하지 않은 토큰입니다.</td>
 </tr>
 </tbody></table>
-<h2 id='get-submittee'>Get Submittee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/project/submittee/{submittee-name}"</span> <span class="se">\</span>
+<h2 id='get-submittee'>Get Submittee</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/submittees/{submittee-name}"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
 
 </code></pre></div>
@@ -1248,7 +1248,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <p>프로젝트 제출자 정보를 가져옵니다.
 원본 pdf, objects 가 포함되어있습니다.</p>
 <h3 id='http-request-9'>HTTP Request</h3>
-<p><code>GET /api/project/submittee/{submittee-name}</code></p>
+<p><code>GET /api/projects/submittees/{submittee-name}</code></p>
 <h3 id='path-parameter-3'>Path Parameter</h3>
 <table><thead>
 <tr>
@@ -1285,7 +1285,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <td>유효하지 않은 토큰입니다.</td>
 </tr>
 </tbody></table>
-<h2 id='change-state'>Change State</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/project/{project-name}/state"</span> <span class="se">\</span>
+<h2 id='change-state'>Change State</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/{project-name}/state"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
 
 </code></pre></div>
@@ -1301,7 +1301,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 2: 공유중 (공유 중단 상태로 변경 가능합니다.)<br/>
 3: 공유중단 (공유중 상태로 변경 가능합니다.)<br/></p>
 <h3 id='http-request-10'>HTTP Request</h3>
-<p><code>PUT /api/project/{project-name}/state</code></p>
+<p><code>PUT /api/projects/{project-name}/state</code></p>
 <h3 id='query-parameter'>Query Parameter</h3>
 <table><thead>
 <tr>
@@ -1342,7 +1342,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <td>유효하지 않은 토큰입니다.</td>
 </tr>
 </tbody></table>
-<h2 id='get-submittee-pdf'>Get Submittee PDF</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/project/submittee/{submittee-name}/pdf"</span> <span class="se">\</span>
+<h2 id='get-submittee-pdf'>Get Submittee PDF</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/projects/submittees/{submittee-name}/pdf"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: {token}"</span>
 
 </code></pre></div>
@@ -1352,7 +1352,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 
 <p>제출자의 PDF를 가져옵니다.</p>
 <h3 id='http-request-11'>HTTP Request</h3>
-<p><code>PUT /api/project/submittee/{submittee-name}/pdf</code></p>
+<p><code>PUT /api/projects/submittees/{submittee-name}/pdf</code></p>
 <h3 id='path-parameter-4'>Path Parameter</h3>
 <table><thead>
 <tr>
@@ -1389,7 +1389,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <td>유효하지 않은 토큰입니다.</td>
 </tr>
 </tbody></table>
-<h1 id='46c08d0a9c'>제출자</h1><h2 id='get-project-2'>Get Project</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/submittee/project/{project-name}"</span>
+<h1 id='46c08d0a9c'>제출자</h1><h2 id='get-project-2'>Get Project</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/submittees/projects/{project-name}"</span>
 
 </code></pre></div>
 <blockquote>
@@ -1470,7 +1470,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <p>프로젝트 정보를 가져옵니다.<br />
 프로젝트의 pdf, objects 가 포함되어있습니다.</p>
 <h3 id='http-request-12'>HTTP Request</h3>
-<p><code>GET /api/submittee/project/{project-name}</code></p>
+<p><code>GET /api/submittees/projects/{project-name}</code></p>
 <h3 id='path-parameter-5'>Path Parameter</h3>
 <table><thead>
 <tr>
@@ -1507,7 +1507,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 <aside class="warning">
 공유중 (state = 2) 인 상태의 프로젝트만 가져올 수 있습니다.
 </aside>
-<h2 id='submit'>Submit</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/submittee/project/{project-name}"</span>
+<h2 id='submit'>Submit</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/submittees/projects/{project-name}"</span>
 
 </code></pre></div>
 <blockquote>
@@ -1517,7 +1517,7 @@ test pw: curioud1, curioud2, curioud3 <br/></p>
 </code></pre></div>
 <p>작성이 완료된 프로젝트를 제출합니다.</p>
 <h3 id='http-request-13'>HTTP Request</h3>
-<p><code>POST /api/submittee/project/{project-name}</code></p>
+<p><code>POST /api/submittees/projects/{project-name}</code></p>
 <h3 id='request-body-5'>Request Body</h3>
 <table><thead>
 <tr>
